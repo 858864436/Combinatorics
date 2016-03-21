@@ -14,6 +14,11 @@ combinatorial structures arising in an algebraic context, or applying algebraic 
 combinatorial problems (algebraic combinatorics).
 
 
+## Requirements
+
+PHP 5.4+ is required. (_The `[]` short array syntax was introduced on [5.4](http://php.net/manual/en/migration54.new-features.php>)_)
+
+
 ## Disclosure
 
 The _Combination_ and _Permutation_ implementation is based on the work of _David Sanders_ (<shangxiao@php.net>).
@@ -25,7 +30,13 @@ Pckagist | <https://packagist.org/packages/pear/math_combinatorics>
 Github   | <https://github.com/pear/Math_Combinatorics>
 
 
-### Combinations
+## Changelog
+
+ - 0.1 Port of the Combinations library (manual tests done, but unit tests, need to be added).
+
+
+
+## Combinations
 
 This version is similar to David's with the difference that the base method will return all possible 
 combinations based on the supplied set.
@@ -40,18 +51,62 @@ longer an attribute of the class shared across the methods, it is an object crea
 thus allowing to run multiple combinations in parallel from the same class instance without having 
 them interfere with each other.
 
+**Note**: As with David's implementation, the returned combinations preserve the keys supplied. (However fixes a minor bug where the single element combinations would not preserve its keys)
 
-## Changelog
+### Usage
 
- - 0.1 Port of the Combinations library - need to add unit tests, perform some more package inclusion testing
- and add the Usage section examples.
+_This usage considers that you have an autoloader running_. (see [Install](#Install) for more reference)
 
+The result of the functionality is an `Array of Arrays` in which the Outer Array is a list of combinations and each Inner Array is the combination itself.
 
+##### Retrieving all combinations for a source data set.
 
-## Usage
+```php
+$sourceDataSet = ['a' => 5, 'b' => 6, 'c' => 8, 'd' => 10];
 
-add this section !
+// Retrieve all combinations as Utility
+$combinationsList = \Math\Combinatorics\Combination::get($sourceDataSet);
 
+// Retrieve all combinations as instance class
+$combination = new \Math\Combinatorics\Combination();
+$combinationsList = $combination->getCombinations($sourceDataSet);
+```
+
+Here is a detailed version of the expanded array
+
+```
+size 1:  [`a` => 5]  [`b` => 6]  [`c` => 8]  [`d` => 10] 
+size 2:  [`a` => 5,`b` => 6]     [`a` => 5,`c` => 8]
+         [`a` => 5,`d` => 10]    [`b` => 6,`c` => 8]
+         [`b` => 6,`d` => 10]    [`c` => 8,`d` => 10] 
+size 3:  [`a` => 5,`b` => 6,`c` => 8]
+         [`a` => 5,`b` => 6,`d` => 10]
+         [`a` => 5,`c` => 8,`d` => 10]
+         [`b` => 6,`c` => 8,`d` => 10] 
+size 4:  [`a` => 5,`b` => 6,`c` => 8,`d` => 10]
+```
+
+##### Retrieving combinations of a given length for a source data set.
+
+```php
+$sourceDataSet = ['a' => 5, 'b' => 6, 'c' => 8, 'd' => 10];
+
+// Retrieve all combinations as Utility
+$combinationsList = \Math\Combinatorics\Combination::get($sourceDataSet, 3);
+
+// Retrieve all combinations as instance class
+$combination = new \Math\Combinatorics\Combination();
+$combinationsList = $combination->getCombinations($sourceDataSet, 3);
+```
+
+Here is a detailed version of the expanded array
+
+```
+size 3:  [`a` => 5,`b` => 6,`c` => 8]
+         [`a` => 5,`b` => 6,`d` => 10]
+         [`a` => 5,`c` => 8,`d` => 10]
+         [`b` => 6,`c` => 8,`d` => 10]
+```
 
 ## Install
 
