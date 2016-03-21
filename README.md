@@ -5,13 +5,13 @@
 
 # COMBINATORICS
 
-> [Wikipedia](https://en.wikipedia.org/wiki/Combinatorics) : **Combinatorics** is a branch of mathematics concerning the study of finite or countable discrete 
-structures. Aspects of combinatorics include counting the structures of a given kind and size 
-(enumerative combinatorics), deciding when certain criteria can be met, and constructing and analyzing 
-objects meeting the criteria (as in combinatorial designs and matroid theory), finding "largest", 
-"smallest", or "optimal" objects (extremal combinatorics and combinatorial optimization), and studying 
-combinatorial structures arising in an algebraic context, or applying algebraic techniques to 
-combinatorial problems (algebraic combinatorics).
+> [Wikipedia](https://en.wikipedia.org/wiki/Combinatorics) : **Combinatorics** is a branch of mathematics 
+concerning the study of finite or countable discrete structures. Aspects of combinatorics include 
+counting the structures of a given kind and size (enumerative combinatorics), deciding when certain 
+criteria can be met, and constructing and analyzing objects meeting the criteria (as in combinatorial 
+designs and matroid theory), finding "largest", "smallest", or "optimal" objects (extremal 
+combinatorics and combinatorial optimization), and studying combinatorial structures arising in an 
+algebraic context, or applying algebraic techniques to combinatorial problems (algebraic combinatorics).
 
 
 ## Requirements
@@ -31,7 +31,7 @@ Github   | <https://github.com/pear/Math_Combinatorics>
 
 
 ## Changelog
-
+ - 0.2 Unit Tests added to Combinations library.
  - 0.1 Port of the Combinations library (manual tests done, but unit tests, need to be added).
 
 
@@ -117,7 +117,7 @@ Just create a composer.json file for your project:
 ```JSON
 {
     "require": {
-        "alphazygma/combinatorics": ">=0.1"
+        "alphazygma/combinatorics": ">=0.2"
     }
 }
 ```
