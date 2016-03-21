@@ -1,5 +1,5 @@
 {
-    "name": "alphazygma/math",
+    "name": "alphazygma/combinatorics",
     "type": "library",
     "description": "A set of common Math libraries.",
     "keywords": ["math", "combinatorics", "combination", "permutation"],
