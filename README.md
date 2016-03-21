@@ -120,7 +120,7 @@ Just create a composer.json file for your project:
 ```JSON
 {
     "require": {
-        "alphazygma/combinatorics": ">=0.2"
+        "alphazygma/combinatorics": ">0.2"
     }
 }
 ```
