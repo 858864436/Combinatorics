@@ -1,7 +1,10 @@
+[![Build Status](https://travis-ci.org/alphazygma/Combinatorics.svg?branch=master)](https://travis-ci.org/alphazygma/Combinatorics)
 [![Latest Stable Version](https://poser.pugx.org/alphazygma/combinatorics/v/stable)](https://packagist.org/packages/alphazygma/combinatorics)
 [![Total Downloads](https://poser.pugx.org/alphazygma/combinatorics/downloads)](https://packagist.org/packages/alphazygma/combinatorics)
 [![Latest Unstable Version](https://poser.pugx.org/alphazygma/combinatorics/v/unstable)](https://packagist.org/packages/alphazygma/combinatorics)
 [![License](https://poser.pugx.org/alphazygma/combinatorics/license)](https://packagist.org/packages/alphazygma/combinatorics)
+
+
 
 # COMBINATORICS
 
