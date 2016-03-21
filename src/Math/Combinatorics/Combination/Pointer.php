@@ -1,5 +1,5 @@
 <?php /** @copyright Alejandro Salazar (c) 2016 */
-namespace Math\Set\Combination;
+namespace Math\Combinatorics\Combination;
 
 /******************************************* Disclaimer ********************************************
  * This class is based on the efforts of David Sanders <shangxiao@php.net>, author of the 
@@ -21,9 +21,9 @@ namespace Math\Set\Combination;
  * @category   Math
  * @version    1.0
  * @license    http://www.gnu.org/licenses/lgpl-3.0.en.html GNU LGPLv3
- * @link       https://github.com/alphazygma/Combination
+ * @link       https://github.com/alphazygma/Math
  * @package    Math
- * @subpackage Set
+ * @subpackage Combinatorics
  */
 class Pointer
 {
