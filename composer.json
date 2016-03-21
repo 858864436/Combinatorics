@@ -1,7 +1,7 @@
 {
     "name": "alphazygma/combinatorics",
     "type": "library",
-    "description": "A set of common Math libraries.",
+    "description": "Math libraries for Combinatorics (Combinations, Permutations, ...).",
     "keywords": ["math", "combinatorics", "combination", "permutation"],
     "license": "LGPL-3.0+",
     "authors": [

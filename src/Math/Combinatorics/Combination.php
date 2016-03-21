@@ -97,7 +97,7 @@ class Combination
             return [$sourceDataSet];
             
         } else if ($subsetSize == 1) {
-            return array_chunk($sourceDataSet, 1);
+            return array_chunk($sourceDataSet, 1, true);
             
         } else if ($subsetSize == 0) {
             return [];
