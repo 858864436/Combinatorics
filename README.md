@@ -136,7 +136,7 @@ $permtuationList = \Math\Combinatorics\Permutation::get($sourceDataSet);
 
 // Retrieve all combinations as instance class
 $permutation      = new \Math\Combinatorics\Permutation();
-$permutationsList = $combination->getPermutations($sourceDataSet);
+$permutationsList = $permutation->getPermutations($sourceDataSet);
 ```
 
 Here is a detailed version of the expanded array
@@ -169,7 +169,7 @@ $permtuationList = \Math\Combinatorics\Permutation::get($sourceDataSet, 2);
 
 // Retrieve all combinations as instance class
 $permutation      = new \Math\Combinatorics\Permutation();
-$permutationsList = $combination->getPermutations($sourceDataSet, 2);
+$permutationsList = $permutation->getPermutations($sourceDataSet, 2);
 ```
 
 Here is a detailed version of the expanded array
