@@ -20,7 +20,7 @@ use \Math\Combinatorics\Combination\Pointer;
  * @category   Math
  * @version    1.0
  * @license    http://www.gnu.org/licenses/lgpl-3.0.en.html GNU LGPLv3
- * @link       https://github.com/alphazygma/Math
+ * @link       https://github.com/alphazygma/Combinatorics
  * @package    Math
  * @subpackage Combinatorics
  */
