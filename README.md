@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/alphazygma/Combinatorics.svg?branch=master)](https://travis-ci.org/alphazygma/Combinatorics)
 [![Latest Stable Version](https://poser.pugx.org/alphazygma/combinatorics/v/stable)](https://packagist.org/packages/alphazygma/combinatorics)
+[![Build Status](https://travis-ci.org/alphazygma/Combinatorics.svg?branch=master)](https://travis-ci.org/alphazygma/Combinatorics)
+[![Coverage Status](https://coveralls.io/repos/github/alphazygma/Combinatorics/badge.svg?branch=master)](https://coveralls.io/github/alphazygma/Combinatorics?branch=master)
 [![Total Downloads](https://poser.pugx.org/alphazygma/combinatorics/downloads)](https://packagist.org/packages/alphazygma/combinatorics)
 [![Latest Unstable Version](https://poser.pugx.org/alphazygma/combinatorics/v/unstable)](https://packagist.org/packages/alphazygma/combinatorics)
 [![License](https://poser.pugx.org/alphazygma/combinatorics/license)](https://packagist.org/packages/alphazygma/combinatorics)
@@ -34,12 +35,15 @@ Github   | <https://github.com/pear/Math_Combinatorics>
 
 
 ## Changelog
+ - 1.0 Added Permutations code (with unit tests)
  - 0.2 Unit Tests added to Combinations library.
  - 0.1 Port of the Combinations library (manual tests done, but unit tests, need to be added).
 
 
 
-## Combinations
+## Classes
+
+### Combinations
 
 This version is similar to David's with the difference that the base method will return all possible 
 combinations based on the supplied set.
@@ -54,9 +58,19 @@ longer an attribute of the class shared across the methods, it is an object crea
 thus allowing to run multiple combinations in parallel from the same class instance without having 
 them interfere with each other.
 
-**Note**: As with David's implementation, the returned combinations preserve the keys supplied. (However fixes a minor bug where the single element combinations would not preserve its keys)
+**Note**: As with David's implementation, the returned combinations preserve the keys supplied. (However 
+fixes a minor bug where the single element combinations would not preserve its keys)
 
-### Usage
+
+### Permutations
+
+As in Combinations, this code is similar to David's with the difference that both pieces are not mixed 
+in the same class, Permutations is a class of its own and has an internal reference to the Combinations class.
+
+It as well, provides with a Static method to access the class as a utility.
+
+
+## Usage
 
 _This usage considers that you have an autoloader running_. (see [Install](#Install) for more reference)
 
@@ -71,7 +85,7 @@ $sourceDataSet = ['a' => 5, 'b' => 6, 'c' => 8, 'd' => 10];
 $combinationsList = \Math\Combinatorics\Combination::get($sourceDataSet);
 
 // Retrieve all combinations as instance class
-$combination = new \Math\Combinatorics\Combination();
+$combination      = new \Math\Combinatorics\Combination();
 $combinationsList = $combination->getCombinations($sourceDataSet);
 ```
 
@@ -98,7 +112,7 @@ $sourceDataSet = ['a' => 5, 'b' => 6, 'c' => 8, 'd' => 10];
 $combinationsList = \Math\Combinatorics\Combination::get($sourceDataSet, 3);
 
 // Retrieve all combinations as instance class
-$combination = new \Math\Combinatorics\Combination();
+$combination      = new \Math\Combinatorics\Combination();
 $combinationsList = $combination->getCombinations($sourceDataSet, 3);
 ```
 
@@ -111,6 +125,65 @@ size 3:  [`a` => 5,`b` => 6,`c` => 8]
          [`b` => 6,`c` => 8,`d` => 10]
 ```
 
+
+##### Retrieving all permutations for a source data set.
+
+```php
+$sourceDataSet = ['z' => 10, 'a' => 50, 'x' => 77];
+
+// Retrieve all combinations as Utility
+$permtuationList = \Math\Combinatorics\Permutation::get($sourceDataSet);
+
+// Retrieve all combinations as instance class
+$permutation      = new \Math\Combinatorics\Permutation();
+$permutationsList = $combination->getPermutations($sourceDataSet);
+```
+
+Here is a detailed version of the expanded array
+
+```
+size 1:  ['z' => 10]
+         ['a' => 50]
+         ['x' => 77]
+size 2:  ['z' => 10, 'a' => 50]
+         ['a' => 50, 'z' => 10]
+         ['z' => 10, 'x' => 77]
+         ['x' => 77, 'z' => 10]
+         ['a' => 50, 'x' => 77]
+         ['x' => 77, 'a' => 50]
+size 3:  ['z' => 10, 'a' => 50, 'x' => 77]
+         ['z' => 10, 'x' => 77, 'a' => 50]
+         ['a' => 50, 'x' => 77, 'z' => 10]
+         ['a' => 50, 'z' => 10, 'x' => 77]
+         ['x' => 77, 'z' => 10, 'a' => 50]
+         ['x' => 77, 'a' => 50, 'z' => 10]
+```
+
+##### Retrieving permutations of a given length for a source data set.
+
+```php
+$sourceDataSet = ['z' => 10, 'a' => 50, 'x' => 77];
+
+// Retrieve all combinations as Utility
+$permtuationList = \Math\Combinatorics\Permutation::get($sourceDataSet, 2);
+
+// Retrieve all combinations as instance class
+$permutation      = new \Math\Combinatorics\Permutation();
+$permutationsList = $combination->getPermutations($sourceDataSet, 2);
+```
+
+Here is a detailed version of the expanded array
+
+```
+size 2:  ['z' => 10, 'a' => 50]
+         ['a' => 50, 'z' => 10]
+         ['z' => 10, 'x' => 77]
+         ['x' => 77, 'z' => 10]
+         ['a' => 50, 'x' => 77]
+         ['x' => 77, 'a' => 50]
+```
+
+
 ## Install
 
 The easiest way to install is through [composer](http://getcomposer.org).
@@ -120,7 +193,7 @@ Just create a composer.json file for your project:
 ```JSON
 {
     "require": {
-        "alphazygma/combinatorics": ">0.2"
+        "alphazygma/combinatorics": "~1.0"
     }
 }
 ```
